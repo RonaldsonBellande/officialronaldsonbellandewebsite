@@ -6708,3 +6708,41 @@ del {
 .switch-wrap {
 	margin-bottom: 10px
 }
+
+.left-sidebar {
+    background-color: #37a18b;
+    float: left;
+    min-height: 100%;
+    position: fixed;
+    width: 8%;
+}
+
+.logo-1 {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 50px;
+}
+.logo-1 h1{
+    color: #fff;
+    text-transform: uppercase;
+}
+.left-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.left-nav ul li a {
+    color: #fff;
+    display: block;
+    padding: 10px 35px;
+    -webkit-transition: all 0.3s ease-in 0s;
+       -moz-transition: all 0.3s ease-in 0s;
+        -ms-transition: all 0.3s ease-in 0s;
+         -o-transition: all 0.3s ease-in 0s;
+            transition: all 0.3s ease-in 0s;
+}
+
+.left-nav ul li a:hover, .left-nav ul li .current {
+    background-color: #fff;
+    color: #000;
+}
