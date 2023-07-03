@@ -2643,7 +2643,7 @@ hr {
 }
 
 .slider-height {
-	background-image: url(../img/hero/h1_hero.jpg);
+	background-image: url(../img/background/main.jpg);
 	min-height: 1000px;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -2675,8 +2675,8 @@ hr {
 }
 
 .slider-height2 {
-	background-image: url(../img/hero/technology.jpeg);
-	min-height: 390px;
+	background-image: url(../img/background/technology.jpg);
+	min-height: 400px;
 	background-repeat: no-repeat;
 	background-size: cover
 }

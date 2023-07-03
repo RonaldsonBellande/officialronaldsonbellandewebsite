@@ -126,35 +126,6 @@
 	opacity: 0.9
 }
 
-body {
-	font-family: "Great Vibes", cursive;
-	font-weight: normal;
-	font-style: normal
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: "Josefin Sans", sans-serif;
-	color: #0b1c39;
-	margin-top: 0px;
-	font-style: normal;
-	font-weight: 500;
-	text-transform: normal
-}
-
-p {
-	font-family: "Great Vibes", cursive;
-	color: #506172;
-	font-size: 16px;
-	line-height: 30px;
-	margin-bottom: 15px;
-	font-weight: normal
-}
-
 .bg-img-1 {
 	background-image: url(../img/slider/slider-img-1.jpg)
 }
@@ -453,7 +424,6 @@ hr {
 .border-btn {
 	border: 2px solid #c6a16e;
 	color: #c6a16e;
-	font: "Josefin Sans", sans-serif;
 	background: none;
 	-moz-user-select: none;
 	padding: 28px 50px;
@@ -2630,7 +2600,6 @@ hr {
 	margin-right: 33px;
 	padding-right: 33px;
 	border-right: 1px solid #fff;
-	font-family: 'Roboto', sans-serif;
 	font-size: 14px
 }
 
@@ -4795,7 +4764,7 @@ hr {
 	padding: 15px;
 	line-height: 1.733;
 	color: #888888;
-	font-style: italic;
+	/* font-style: italic; */
 	margin-top: 25px;
 	margin-bottom: 25px
 }
