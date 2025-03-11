@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="assets/css/nice-select.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/repository.css">
 </head>
 
 <body>
@@ -75,8 +76,8 @@
     </div>
     <!-- Header End -->
   </header>
-  <main>
 
+  <main>
     <!-- Header Start -->
     <div class="slider-area ">
       <div class="slider-height2 d-flex align-items-center">
@@ -99,7 +100,7 @@
     </div>
     <!-- Header End -->
 
-    <!--View Start-->
+    <!--View Portfolio Start-->
     <div class="section-top-border">
       <div class="container">
         <div class="section-tittle">
@@ -107,33 +108,33 @@
         </div>
 
         <div class="col-md-100 mt-sm-100">
-          <p class="pera1"> Incorporated advanced techniques in machine learning, including Deep Neural Networks, Neural
+          <p class="pera1">Incorporated advanced techniques in machine learning, including Deep Neural Networks, Neural
             Networks, Transfer Learning, Supervised, and Unsupervised Learning, to conduct a comprehensive evaluation
             for optimal performance in Image Classification and Object Recognition. Demonstrated proficiency in
             utilizing machine learning across diverse datasets, even generating datasets from raw, unprocessed files.
             Implemented Deep Neural Network, Neural Network, and Machine Learning to determine which is better for Image
             Classification & Object Recognition.</p>
 
-          <p class="pera1"> In Operating Systems, we utilized machine learning algorithms to optimize resource
+          <p class="pera1">In Operating Systems, we utilized machine learning algorithms to optimize resource
             allocation, enhancing overall system efficiency. In Mechanical Design, Neural Networks were employed to
             analyze complex structures, optimizing designs for enhanced performance.</p>
 
-          <p class="pera1"> Implemented a variety of algorithms such as Q-Learning, Double Q-Learning, Monte Carlo,
+          <p class="pera1">Implemented a variety of algorithms such as Q-Learning, Double Q-Learning, Monte Carlo,
             Temporal Difference, Deep Q-Learning, and Actor-Critic with Eligibility Traces. Applied these algorithms to
             games and GridWorld, demonstrating adaptability in both continuous and discrete environments. Leveraged
             Computer Vision and Image Processing to detect and navigate to specific objects, employing diverse
             algorithms to navigate complex environments. Applied this knowledge in various fields, including API
             development, Deep Learning, Deep Reinforcement Learning, and SDK integration.</p>
 
-          <p class="pera1"> In Electrical Design, we implemented Reinforcement Learning algorithms for circuit
+          <p class="pera1">In Electrical Design, we implemented Reinforcement Learning algorithms for circuit
             optimization, ensuring efficient power consumption. For DevOps and DevSpecOps, our algorithms contributed to
             automated testing and deployment, streamlining software development processes.</p>
 
-          <p class="pera1"> In Cyber Security, our algorithms analyze network traffic patterns, identifying potential
+          <p class="pera1">In Cyber Security, our algorithms analyze network traffic patterns, identifying potential
             threats in real-time. For Malware Analysis, our tools utilize Machine Learning to detect and neutralize
             evolving threats, ensuring robust cybersecurity.</p>
 
-          <p class="pera1"> Designed and developed websites using Full Stack or MEAN Stack technologies, featuring
+          <p class="pera1">Designed and developed websites using Full Stack or MEAN Stack technologies, featuring
             sections for profiles, portfolios, services, and blogs with dedicated servers. Applied algorithms for the
             analysis of various disease symptoms, including Brain Tumor, Breast Cancer, Diabetes, and more. Emphasized
             the collection of valuable information for accurate prediction of current or future diseases, striving to
@@ -144,14 +145,14 @@
             functionality of sensors in various devices. For Drones, Machine Learning algorithms contribute to
             intelligent flight control and obstacle avoidance, ensuring safe and efficient operations.</p>
 
-          <p class="pera1"> Implemented DMP learning algorithm with and without a blackbox to follow a particular path
+          <p class="pera1">Implemented DMP learning algorithm with and without a blackbox to follow a particular path
             that is displayed and repeat that action in any state of the world. Implemented Reinforcement Learning (RL)
             algorithm that discovers the best optimal solution to do a task by trial-and-error and giving feedback.
             Utilized Inverse Reinforcement Learning (IRL) algorithms to find the best reward associated with the
             demonstration. These techniques are widely applicable across Control Systems, DevOps, Cyber Security, and
             more. For specific use cases, please visit our website.</p>
 
-          <p class="pera1"> In Navigation systems, our algorithms use Reinforcement Learning for optimal route planning,
+          <p class="pera1">In Navigation systems, our algorithms use Reinforcement Learning for optimal route planning,
             adapting to dynamic environments. For Manipulation tasks, such as in Robotics, our algorithms learn
             efficient grasping and manipulation strategies through trial-and-error.</p>
 
@@ -161,35 +162,61 @@
             examples, we invite you to explore our company website, where you can find comprehensive information on our
             work in Machine Learning, Robotics, Website Design, and Data Analysis.</p>
 
-          <p class="pera1"> In AR/VR development, our Computer Vision algorithms enable precise object recognition,
+          <p class="pera1">In AR/VR development, our Computer Vision algorithms enable precise object recognition,
             creating immersive and interactive experiences. For Thermal and Fluid systems, our algorithms optimize
             heating and cooling processes, ensuring energy efficiency. Explore our website for in-depth insights into
-            these applications and how they can be tailored to your specific needs."</p>
+            these applications and how they can be tailored to your specific needs.</p>
         </div>
       </div>
     </div>
-    <!-- View End-->
+    <!-- Portfolio View End-->
 
     <!-- Repository Viewer Start -->
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <header>
-            <div class="search-container">
-              <input type="text" id="searchInput" placeholder="Search repositories...">
-              <button id="searchButton">Search</button>
+      <!-- Search and filter section -->
+      <div id="search-container">
+        <input type="text" id="searchInput" placeholder="Search repositories by name, description, or owner...">
+        <button id="searchButton">Search</button>
+      </div>
+
+      <div id="filter-container">
+        <button class="platform-btn active" data-platform="all">All Platforms</button>
+        <button class="platform-btn" data-platform="github">GitHub</button>
+        <button class="platform-btn" data-platform="gitlab">GitLab</button>
+        <button class="platform-btn" data-platform="bitbucket">Bitbucket</button>
+      </div>
+
+      <!-- Repositories grid view -->
+      <div id="repositoriesGrid">
+        <!-- Repositories will be loaded here -->
+        <div class="loading">Loading repositories...</div>
+      </div>
+
+      <!-- Repository explorer view -->
+      <div id="repo-explorer">
+        <div id="repo-explorer-header">
+          <button id="back-to-list">Back to Repository List</button>
+        </div>
+        <div id="repo-explorer-content">
+          <div id="repo-sidebar">
+            <div id="repo-info">
+              <!-- Repository info will be loaded here -->
             </div>
-          </header>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <button class="platform-btn active" data-platform="all">All</button>
-            <button class="platform-btn" data-platform="github">GitHub</button>
-            <button class="platform-btn" data-platform="gitlab">GitLab</button>
-            <button class="platform-btn" data-platform="bitbucket">Bitbucket</button>
+            <div id="breadcrumb">
+              <!-- Breadcrumb navigation will be loaded here -->
+            </div>
+            <div id="file-list">
+              <!-- File list will be loaded here -->
+            </div>
           </div>
-          <div class="single-cat text-center mb-50">
-            <div class="repositories-grid" id="repositoriesGrid">
-              <!-- Repositories will be loaded here by JavaScript -->
-              <div class="loading">Loading repositories...</div>
+          <div id="repo-main">
+            <div id="error-message"></div>
+            <div id="loader">
+              <div class="loader-spinner"></div>
+            </div>
+            <div id="content-display">
+              <h3 id="file-name"></h3>
+              <pre id="file-content"></pre>
             </div>
           </div>
         </div>
