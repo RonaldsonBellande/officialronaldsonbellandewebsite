@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Hard-coded repository sources
   const sources = {
+    bellandegit: {
+      users: ['RonaldsonBellande'],
+      organizations: [
+        'BRSRI',
+        'BAIXRI',
+        'BAICVRI',
+        'BAMRI',
+        'BMEERI'
+      ]
+    },
     github: {
       users: ['RonaldsonBellande'],
       organizations: [
@@ -93,6 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     try {
+      // Load BellandeGit repositories
+      await loadBellandeGitRepositories();
+
       // Load GitHub repositories
       await loadGitHubRepositories();
 
@@ -108,6 +121,58 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Error loading repositories:', error);
       if (repositoriesGrid) {
         repositoriesGrid.innerHTML = '<div class="error">Error loading repositories. Please try again.</div>';
+      }
+    }
+  }
+
+  async function loadBellandeGitRepositories() {
+    // Load user repositories
+    for (const user of sources.bellandegit.users) {
+      try {
+        const response = await fetch(`https://api.git.bellande-technologies.com/users/${user}/repos`);
+        const repos = await response.json();
+
+        if (Array.isArray(repos)) {
+          repos.forEach(repo => {
+            allRepositories.push({
+              name: repo.name,
+              description: repo.description || 'No description',
+              url: repo.html_url,
+              platform: 'bellandegit',
+              owner: repo.owner.login,
+              language: repo.language,
+              stars: repo.stargazers_count,
+              forks: repo.forks_count
+            });
+          });
+        }
+      } catch (error) {
+        console.error(`Error loading Bellande Git repos for user ${user}:`, error);
+      }
+    }
+
+    // Load organization repositories
+    for (const org of sources.bellandegit.organizations) {
+      try {
+        const response = await fetch(`https://api.git.bellande-technologies.com/orgs/${org}/repos`);
+        const repos = await response.json();
+
+        if (Array.isArray(repos)) {
+          repos.forEach(repo => {
+            allRepositories.push({
+              name: repo.name,
+              description: repo.description || 'No description',
+              url: repo.html_url,
+              platform: 'bellandegit',
+              owner: repo.owner.login,
+              language: repo.language,
+              stars: repo.stargazers_count,
+              forks: repo.forks_count
+            });
+          });
+        }
+      } catch (error) {
+        console.error(`Error loading bellandegit repos for org ${org}:`, error);
       }
     }
   }
